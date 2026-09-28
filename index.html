@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Gửi em tún iu </title>
+<style>
+@font-face {
+font-family:"Nunito";
+src:url("Nunito-VariableFont_wght.ttf");
+}
+body {
+background-color:#E8D9DC;
+color:#6B4A42;
+text-align: center;
+font-family: "Nunito", sans-serif;
+}
+/* BUTTON */
+button {
+    background-color: #D9BFC4;
+    color: #6B4A42;
+    border: 2px solid #B8959C;
+    border-radius: 20px;
+    padding: 10px 22px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #CBAEB5;
+    transform: scale(1.08);
+}
+</style>
+<body>
+<div id="slide1">
+<h1> Hi Cún, nay t viết thử web </h1>
+<p> sợ ch viết xong cún ngủ mất tiêu òi bùn lắm huhu </p>
+<img src="cn cho bel free.jpg" width="400"style="border-radius:20px;">
+<br><br>
+<button onclick="nextSlide()"> Click tui!</button>
+
+<style>
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+#slide3 {
+    text-align: center;
+}
+
+#slide3 img {
+    border-radius: 20px;
+}
+#slide3 {
+    display: none;
+}
+#slide4,
+#slide5 {
+    display: none;
+}
+#noBtn {
+    transition: left 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.2s ease;
+}
+</style>
+
+<script>
+let emojis = ["🌸","🌷","🌼","🌺","✿","❀","🩷","🎀"];
+
+setInterval(() => {
+    let e = document.createElement("div");
+    e.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    e.style.position = "fixed";
+    e.style.left = Math.random() * 100 + "vw";
+    e.style.top = "-20px";
+    e.style.fontSize = (15 + Math.random() * 15) + "px";
+    e.style.animation = "fall " + (3 + Math.random() * 3) + "s linear";
+    e.style.pointerEvents = "none";
+    document.body.appendChild(e);
+    setTimeout(() => e.remove(), 6000);
+}, 500);
+</script>
+</div>
+<div id="slide2" style="display:none;">
+<h1> Cute kh=)))))) <h1>
+<p><h2> nhưng mà cute th ch đủ, tôi có điều rất quan trọng cần hỏi Cún, click tiếp đi r biết=)))))</h2> <p>
+<img src="cn usagi bel.jpg" width="400"style="border-radius:20px;">
+<br><br>
+
+<button onclick="nextSlide()"> Click bm đê </button>
+</div>
+<div id="slide3">
+    <h1>Cún có iu tui khum? 💗</h1>
+    <img src="cn cho om trai tim.jpg" width="500"style="border-radius:20px;">
+    <br><br>
+
+    <button onclick="yesLove()"> Cóaaaa 💗</button>
+    <button id="noBtn" onclick="noLove()">Khummmm</button>
+
+</div>
+<div id="slide4">
+    <h1>KHÔNG IU THÌ THUI ,CÚTTTTT</h1>
+    <img src="usagi do le.jpg" width="500" style="border-radius:20px;">
+    <br>
+    <button onclick="exitPage()">NÚT CÚT</button>
+</div>
+
+<div id="slide5">
+    <h1>Tui cũm iu Cúnnn!!! 💗</h1>
+    <img src="cn cho hun.jpg" width="500"style="border-radius:20px;">
+    <div id="hearts"></div>
+</div>
+<script>
+let currentSlide = 1;
+
+function nextSlide() {
+    document.getElementById("slide" + currentSlide).style.display = "none";
+
+    currentSlide++;
+
+    document.getElementById("slide" + currentSlide).style.display = "block";
+}
+
+function yesLove() {
+    document.getElementById("slide3").style.display = "none";
+    document.getElementById("slide5").style.display = "block";
+}
+var noCount = 0;
+function noLove() {
+    var btn = document.getElementById("noBtn");
+
+    noCount++;
+
+    if (noCount == 1) {
+        btn.style.left = "70%";
+        btn.style.top = "20%";
+    }
+
+    if (noCount == 2) {
+        btn.style.left = "15%";
+        btn.style.top = "25%";
+    }
+
+    if (noCount == 3) {
+        btn.style.left = "70%";
+        btn.style.top = "65%";
+    }
+
+    if (noCount == 4) {
+        btn.style.left = "20%";
+        btn.style.top = "70%";
+    }
+
+    if (noCount == 5) {
+        btn.style.left = "45%";
+        btn.style.top = "15%";
+    }
+
+    if (noCount == 6) {
+        btn.style.left = "75%";
+        btn.style.top = "45%";
+    }
+
+    if (noCount == 7) {
+        btn.style.left = "10%";
+        btn.style.top = "50%";
+    }
+
+    if (noCount >= 8) {
+        document.getElementById("slide3").style.display = "none";
+        document.getElementById("slide4").style.display = "block";
+        return;
+    }
+
+    btn.style.position = "fixed";
+
+    btn.style.transform = "scale(1.12)";
+
+    setTimeout(function() {
+        btn.style.transform = "scale(0.96)";
+    }, 200);
+
+    setTimeout(function() {
+        btn.style.transform = "scale(1)";
+    }, 350);
+}
+
+</script>
+
+</body>
+</html>
